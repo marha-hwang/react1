@@ -1,21 +1,5 @@
 import React, {Component} from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View, Text, TextInput, Button} from 'react-native';
-import Memo from './Memo';
-
-
-const Stack = createNativeStackNavigator();
-function Navigation() {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name = "Memo" Component = {Memo} />
-                <Stack.Screen name = "Login" Component = {Login} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    )
-}
 
 class Login extends Component{
     render(){
@@ -28,7 +12,7 @@ class Login extends Component{
                             <Text>PW</Text>
                             <TextInput style = {styles.textBox}></TextInput>
                         </View>
-                        <Button title = "로그인" onPress={() => navigation.navigate('Memo')}></Button>
+                        <Button title = "로그인" onPress={ () =>  this.props.navigation.navigate("Memo")}></Button>
                 </View>
     }
 }
@@ -37,7 +21,7 @@ const styles = StyleSheet.create({
     container : {
         flex : 1,
         justifyContent : 'space-between',
-        marginTop : '60%',
+        marginTop : '30%',
         marginLeft : '10%',
         marginRight : '10%',
         marginBottom : '120%',
@@ -60,4 +44,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Navigation;
+export default Login;
