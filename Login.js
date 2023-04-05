@@ -17,6 +17,9 @@ class Login extends Component{
     }
 }
 
+
+//api호출
+
 const styles = StyleSheet.create({
     container : {
         flex : 1,
